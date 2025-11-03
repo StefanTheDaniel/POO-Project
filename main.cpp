@@ -133,7 +133,7 @@ public:
         std::cout<<"Hand of "<<name<<std::endl;
         hand.printCards();
     }
-    void addHealth(int score)
+    void addScore(int score)
     {
         score += score;
     }
@@ -165,14 +165,16 @@ class Shuffle
     void dealCards(Player &player1, Player &player2, Player &player3, Player &player4)
     {
         int i = 0;
-        while (i < 52) // Deal 13 cards to each player, total of 52 cards in a standard deck
+        int cardsPerPlayer = 5;
+        int totalCards = cardsPerPlayer * 4;
+        while (i < totalCards)
         {
-            if (i < 13) {
+            if (i<5) {
                 player1.addCardHand(deck[i]);
-            } else if (i < 26) {
-                player2.addCardHand(deck[i]);
-            } else if (i < 39) {
-                player3.addCardHand(deck[i]);
+            } else if (i<10) {
+                player2.addCardHand(deck[i]);//player 2,3,4 are the enemies
+            } else if (i<15) {
+                player3.addCardHand(deck[i]);//player 1 o sa fie singurul controlled
             } else {
                 player4.addCardHand(deck[i]);
             }
