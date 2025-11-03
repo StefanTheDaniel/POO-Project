@@ -1,6 +1,6 @@
 # Card Auto-Battler
 
-Un card based auto-battler, inspirat din slay the spire si inscryption.
+Un card based auto-battler, inspirat din slay the spire si inscryption. Propun sa implementez un joc auto battler asemanator cu super auto pets, dar v-a fi bazat pe carti de joc.
 
 ### Tema 0
 
