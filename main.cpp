@@ -10,6 +10,8 @@ class Card
 {
     int suit;
     int value;
+    int health;
+    int damage;
 public:
     Card(int suit, int value) : suit(suit), value(value) {}
 
@@ -19,7 +21,7 @@ public:
         {
             std::cout<<(value == 1 ? "Black Joker" : "Red Joker")<<std::endl;
         }
-        else //for the royal cards, ace is treated as value=1
+        else //for the special cards, ace is treated as value=1
         {
             std::string SpecialValue;
             switch(value)
@@ -44,6 +46,8 @@ public:
     }
     int getValue() const{return value;}
     int getSuit() const{return suit;}
+    int getHealth() const{return health;}
+    int getDamage() const{return damage;}
 };
 
 class Hand
@@ -114,7 +118,7 @@ class Player
     int score;
     Hand hand; //o mana pt jucator
 public:
-    Player(const std::string name) : name(name), score(0) {}
+    Player(const std::string name) : name(name), score(3) {}
 
     void addCardHand(const Card& card)
     {
@@ -129,7 +133,7 @@ public:
         std::cout<<"Hand of "<<name<<std::endl;
         hand.printCards();
     }
-    void addScore(int score)
+    void addHealth(int score)
     {
         score += score;
     }
